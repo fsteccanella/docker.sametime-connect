@@ -2,7 +2,7 @@ FROM centos:6
 ADD chat_installer*.rpm /tmp
 RUN \
     yum update -y && \
-    yum install -y sudo dbus dbus-x11&& \
+    yum install -y sudo dbus dbus-x11 && \
     yum install -y libXtst.i686 xulrunner.i686 xorg-x11-fonts-Type1 iproute && \
     yum localinstall --nogpgcheck -y /tmp/chat_installer*.rpm && \
     rm /tmp/chat_installer*.rpm && \
